@@ -14,6 +14,7 @@ public:
     Ant *ant_best;       //保存最好结果的蚂蚁
     void init();
     void updateInfo();
+    QString colorControll;
     void search();
     Global g;
     void test(QWidget*);

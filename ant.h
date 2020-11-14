@@ -20,7 +20,7 @@ public:
     void init();
     int chooseNextCity();
     void move();
-    void search();
+    void search(QString color);
 signals:
 
 };

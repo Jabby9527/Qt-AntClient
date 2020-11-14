@@ -20,13 +20,7 @@ Ant::Ant(QObject *parent)
     vis=new int[CITY_NUM];
     antTimer=new QTimer(this);
     order_cnt=1;
-    connect(antTimer,&QTimer::timeout,[=](){
-        if(order_cnt<moved_cnt){
-            city_list[Path[order_cnt]]->setVisit();
-            order_cnt++;
-        }
-        else antTimer->stop();
-    });
+
 }
 
 void Ant::init() {
@@ -97,16 +91,22 @@ void Ant::move() {
     moved_cnt++;
 }
 
-void Ant::search() {
+void Ant::search(QString color) {
     init();
+    connect(antTimer,&QTimer::timeout,[=](){
+        if(order_cnt<moved_cnt){
+            city_list[Path[order_cnt]]->setVisit(color);
+            order_cnt++;
+        }
+        else antTimer->stop();
+    });
     //如果蚂蚁去过的城市数量小于城市数量，就继续移动
     while (moved_cnt < CITY_NUM) {
         move();
-
     }
     length += dis[Path[CITY_NUM - 1]][Path[0]];
 
-    city_list[Path[0]]->setVisit();
+    city_list[Path[0]]->setVisit(color);
     antTimer->start(GAP_TIME);
 }
 

@@ -10,9 +10,9 @@ City::City(QString name){
 
 }
 
-void City::setVisit()
+void City::setVisit(QString color)
 {
     QString tmp=QString("QPushButton{border:1px solid black;border-radius:%1px;background-color:%2;}")
-            .arg(ICON/2).arg("green");
+            .arg(ICON/2).arg(color);
     this->setStyleSheet(tmp);
 }

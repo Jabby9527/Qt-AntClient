@@ -13,7 +13,7 @@ public:
     int label;
     friend class Ant;
     City(QString name);
-    void setVisit();
+    void setVisit(QString color);
 
 signals:
 

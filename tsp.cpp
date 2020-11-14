@@ -38,6 +38,7 @@ void Tsp::init() {
     for(int i=0;i<ANT_NUM;i++){
         ants.push_back(new Ant(this));
     }
+    ant_best=new Ant();
     //初始化为最大值
     ant_best->length = MMAX;
     puts("calulate dis");
@@ -101,10 +102,9 @@ void Tsp::search() {
     for (int i = 0; i < TMAX; i++) {
 //        printf("current iteration times %d\n", i);
         for (int j = 0; j < ANT_NUM; j++) {
-//            cout<<TMAX<<" "<<ANT_NUM<<endl;
-//            ants[j].search();
-            ants[j]->search();
 
+            colorControll=(j%2==0?"red":"yellow");
+            ants[j]->search(colorControll);
 
         }
         //保存最佳结果
