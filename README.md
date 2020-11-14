@@ -17,4 +17,4 @@ git relog
 git reset --hard HEAD^
 git reset --hard HEAD~100
  
-free password update test.
+free password update all.
