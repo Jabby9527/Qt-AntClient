@@ -3,7 +3,7 @@
 int CITY_NUM=0;  //城市数量
 int ANT_NUM=0;   //蚁群数量
 int TMAX=0;  //迭代最大次数
-double ROU=0;     //误差大小
+float ROU=0;     //误差大小
 int ALPHA=0;     // 信息素重要程度的参数
 int BETA=0;     // 启发式因子重要程度的参数
 int Q=0; //信息素残留参数
@@ -17,7 +17,7 @@ QVector<City*> city_list;
 //double E[CITY_NUM][CITY_NUM]; //启发因子矩阵
 //int vis[CITY_NUM][CITY_NUM];
 
-void Global::init(int al,int be,int q,double rou,int an,int cn,int tmax,int sp){
+void Global::init(int al,int be,int q,float rou,int an,int cn,int tmax,int sp){
     CITY_NUM=cn;
     ANT_NUM=an;
     TMAX=tmax;

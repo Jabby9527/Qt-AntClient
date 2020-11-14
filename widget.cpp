@@ -48,10 +48,10 @@ void Widget::initInput()
     if(ui->startPos->text().isEmpty()) ui->startPos->setText("-1");
 
     tsp.g.init(ui->alpha->text().toInt(),ui->beta->text().toInt(),ui->residueQ->text().toInt(),
-               ui->error->text().toDouble(),ui->antNum->text().toInt(),
+               ui->error->text().toFloat(),ui->antNum->text().toInt(),
                ui->cityNum->text().toInt(),ui->times->text().toInt(),ui->startPos->text().toInt());
 
-    srand(time(nullptr));
+    srand(time(NULL));
     int wid=ui->map->width();
     int hei=ui->map->height();
 
