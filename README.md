@@ -16,4 +16,5 @@ git log
 git relog
 git reset --hard HEAD^
 git reset --hard HEAD~100
-adsaa
+ 
+free password
